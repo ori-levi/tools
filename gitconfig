@@ -1,0 +1,18 @@
+[user]
+	name = Ori Levi
+[alias]
+	subdate = !git submodule foreach --recursive "git submodule sync" && git submodule update --recursive --init
+	st = status
+	co = checkout
+	clean-branch = remote update origin --prune
+	clean-git = !git clean-branch && git fetch --prune --tags --force && git pull
+	fix-commit-time = !git commit --amend --no-edit --date \"$(date)\"
+[core]
+	autocrlf = input
+	excludesfile = /Users/oril/.gitignore_global
+[pull]
+	rebase = true
+[commit]
+	template = /Users/oril/.stCommitMsg
+[merge]
+	ff = true
